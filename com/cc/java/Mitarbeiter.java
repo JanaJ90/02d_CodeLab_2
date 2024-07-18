@@ -1,6 +1,3 @@
-
-
-
 public class Mitarbeiter {
     private String name;
     private String vorname;
@@ -14,18 +11,20 @@ public class Mitarbeiter {
         this.eintrittsjahr = eintrittsjahr;
     }
 
-    public String getInfo(String property) {
-        switch (property) {
-            case "Name":
-                return this.name;
-            case "Vorname":
-                return this.vorname;
-            case "Funktion":
-                return this.funktion;
-            case "Eintrittsjahr":
-                return String.valueOf(this.eintrittsjahr);
-            default:
-                return "Unbekannte Eigenschaft";
+    public void getInfo(String parameter) {
+        if (parameter.equals("alles")) {
+            System.out.println(vorname + " " + name);
+            System.out.println("Funktion: " + funktion);
+            System.out.println("Eintrittsjahr: " + eintrittsjahr);
+        } else if (parameter.equals("name")) {
+            System.out.println(vorname + " " + name);
+        } else if (parameter.equals("funktion")) {
+            System.out.println("Funktion: " + funktion);
+        } else if (parameter.equals("eintrittsjahr")) {
+            System.out.println("Eintrittsjahr: " + eintrittsjahr);
+        } else {
+            System.out.println("Invalid parameter");
         }
     }
 }
+
